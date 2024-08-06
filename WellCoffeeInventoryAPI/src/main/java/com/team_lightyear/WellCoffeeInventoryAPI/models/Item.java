@@ -26,6 +26,7 @@ public class Item {
     private Double price;
     private String location;
     private String description;
+    private String comment;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
@@ -37,13 +38,14 @@ public class Item {
     }
 
     // Constructor
-    public Item(String name, Integer quantity, Double price, String location, String description, Category category) {
+    public Item(String name, Integer quantity, Double price, String location, String description, Category category, String comment) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
         this.location = location;
         this.description = description;
         this.category = category;
+        this.comment = comment;
     }
 
     // Getters and Setters
@@ -99,6 +101,9 @@ public class Item {
         this.category = category;
     }
 
+    public String getComment() { return comment; }
+    public void setComment(String comment) { this.comment = this.comment; }
+
     // toString() method
     @Override
     public String toString() {
@@ -109,6 +114,7 @@ public class Item {
                 ", price=" + price +
                 ", location='" + location + '\'' +
                 ", description='" + description + '\'' +
+                ", comment='" + comment + '\'' +
                 ", category=" + category +
                 '}';
     }

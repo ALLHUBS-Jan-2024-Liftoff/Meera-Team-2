@@ -80,4 +80,14 @@ public class ItemService {
         }
         itemRepository.deleteById(id);
     }
+
+    public void commentItem(int id, Item itemDetails, String comment) {
+        Item item = itemRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Item with ID " + id + " not found"));
+        if (itemDetails.getComment() != null) {
+            item.setComment(itemDetails.getComment());
+        } else {
+            itemDetails.setComment(comment);
+        }
+    }
 }

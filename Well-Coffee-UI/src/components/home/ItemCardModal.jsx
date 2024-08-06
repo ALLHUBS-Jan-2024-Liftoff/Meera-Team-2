@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import image from '../../assets/images/coffee.png';
-import { Button, Modal, Badge, Card, ListGroup } from 'react-bootstrap';
+import { Button, Modal, Badge, Card, ListGroup, Form, FormGroup } from 'react-bootstrap';
 
 const ItemCardModal = () => {
   const [show, setShow] = useState(false);
@@ -37,6 +37,12 @@ const ItemCardModal = () => {
               <ListGroup.Item>Item Cost: $2.00</ListGroup.Item>
               <ListGroup.Item>Sell Price: $3.50</ListGroup.Item>
             </ListGroup>
+            <br></br>
+            <FormGroup>
+                <Form.Label>Comment</Form.Label>
+                <Form.Control type="text" placeholder="Enter comment" />
+                <Button variant='secondary'>Submit</Button>
+            </FormGroup>
           </Card>
         </Modal.Body>
         <Modal.Footer>
